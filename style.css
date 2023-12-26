@@ -1,0 +1,240 @@
+/* Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Lora:ital@0;1&family=Poppins:wght@300;400&display=swap");
+
+/* Global Styles */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: #f8ad9d;
+}
+
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+/* For WebKit browsers like Chrome and Safari */
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+@supports (-ms-ime-align: auto) {
+    body {
+        -ms-overflow-style: none;
+        /* Hide the scrollbar in Edge */
+    }
+
+    body::-ms-scrollbar {
+        width: 0px;
+        /* Set the width of the scrollbar in Edge */
+    }
+
+    body::-ms-thumb {
+        background-color: #888;
+        /* Set the color of the scrollbar thumb in Edge */
+    }
+
+    body::-ms-track {
+        background-color: #f1f1f1;
+        /* Set the color of the scrollbar track in Edge */
+    }
+}
+
+
+/* Section Styles */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+    min-height: 500px;
+}
+
+/* Image Styles */
+img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: 0.8s ease;
+}
+
+img:hover {
+    margin-bottom: 20px;
+    box-shadow: 12px 12px #07072c;
+}
+
+/* Color Styles */
+.darkestPeach {
+    background-color: #f08080;
+    font-family: "Poppins", sans-serif;
+    color: antiquewhite;
+}
+
+.darkPeach {
+    background-color: #f4978e;
+}
+
+.peach {
+    background-color: #f8ad9d;
+    display: grid;
+    grid-template-columns: 40% auto;
+}
+
+.lightPeach {
+    background-color: #f7dba7;
+    color: White;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Awards Styles */
+.awards:hover {
+    margin-bottom: 20px;
+    box-shadow: 12px 12px wheat;
+}
+
+/* Gray Styles */
+.gray {
+    font-family: "Poppins", sans-serif;
+}
+
+/* White Peach Styles */
+.whitePeach {
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-family: "Poppins", sans-serif;
+    word-wrap: break-word;
+    justify-content: space-between;
+    align-content: center;
+}
+
+/* Hidden and Show Styles */
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: opacity(0);
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: opacity(100%);
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+/* Span Styles */
+span {
+    font-family: "Lobster", cursive;
+}
+
+/* Final Styles */
+.final {
+    gap: 1rem;
+    font-family: "Dancing Script", cursive;
+    background-image: url("https://media.discordapp.net/attachments/701125768675065917/1030317951141818398/2022-10-13_10.png?width=1246&height=701");
+}
+
+.move {
+    margin-right: 500px;
+}
+
+/* Preloader Styles */
+/* Fade-out Animation */
+@keyframes fadeOut {
+
+    0%,
+    100% {
+        opacity: 1;
+        /* Starting and ending opacity (fully opaque) */
+    }
+
+    50% {
+        opacity: 0;
+        /* Middle point opacity (completely transparent) */
+    }
+}
+
+/* Fade-out Styles */
+body.fade-out {
+    visibility: hidden;
+    opacity: 0;
+    /* animation: fadeOut 2s ease-in-out forwards; */
+    transition: visibility 0s 2s, opacity 2s ease-in-out;
+    /* transition: visibility 0s 2s; */
+}
+
+/* Black Screen Styles with Fade-out Animation */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /* animation: fadeOut 2s ease-in-out; Apply only the fade-out animation */
+    animation: fadeOut 2s ease-in-out;
+}
+
+
+.black-screen {
+    color: #fff;
+    text-align: center;
+}
+
+.instructions {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Start Audio Button Styles */
+.start-audio-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #f8ad9d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-audio-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f8ad9d, #ffc3a0, #f8ad9d);
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.start-audio-button:hover::before {
+    opacity: 1;
+}
